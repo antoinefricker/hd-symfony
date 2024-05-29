@@ -1,0 +1,8 @@
+<header id="app-header">
+    <h2>{% for token in title %}<span class="title-token">{{token}} </span>{% endfor %}</h2>
+    {% if user is defined %}
+    <ul>
+        {% if 'ROLE_ADMIN' in app.user.roles %}<li><a href="{{ path('admin')}}">Admin</a>{% endif %}
+    </ul>
+    {% endif %}
+</header>

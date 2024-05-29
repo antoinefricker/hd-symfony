@@ -10,3 +10,8 @@
 ###< symfony/framework-bundle ###
 
 docs/live-notes.md
+
+###> symfony/asset-mapper ###
+/public/assets/
+/assets/vendor/
+###< symfony/asset-mapper ###
