@@ -9,7 +9,7 @@
 /vendor/
 ###< symfony/framework-bundle ###
 
-docs/live-notes.md
+docs/local-accounts.md
 
 ###> symfony/asset-mapper ###
 /public/assets/
