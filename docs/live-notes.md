@@ -3,8 +3,9 @@
 - [x] Index page
   - [x] Create twig template `app_header` (links to login / logout / admin)
 - [x] User edition in admin
-- [x] Entity many2one relation: bind `LinksFolder` to `Links`
-- [ ] API route [GET] user/{user_id}/links_folders
+- [x] Entity ManyToMany relation: bind `LinksFolder` to `Links`
+- [ ] Entity ManyToMany relation: bind `Admin` to `LinksFolder`
+- [ ] API route [GET] /api/user/{user_id}/links_folders
   - [ ] User restriction owner
   - [ ] User restriction admin
 
@@ -58,3 +59,4 @@ https://symfony.com/bundles/ux-react/current/index.html
 - [ ] Profile view with restriction
 - [ ] User password edition in admin
 - [ ] Access errors handling
+- [ ] Create makefile
