@@ -21,6 +21,11 @@ class Admin implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(length: 180)]
     private ?string $email = null;
 
+    public function __toString()
+    {
+        return $this->email;
+    }
+
     /**
      * @var list<string> The user roles
      */

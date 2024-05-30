@@ -24,9 +24,16 @@ class LinksFolder
     #[ORM\ManyToMany(targetEntity: Link::class)]
     private Collection $links;
 
+    /**
+     * @var Collection<int, Admin>
+     */
+    #[ORM\ManyToMany(targetEntity: Admin::class)]
+    private Collection $owners;
+
     public function __construct()
     {
         $this->links = new ArrayCollection();
+        $this->owners = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -66,6 +73,30 @@ class LinksFolder
     public function removeLink(Link $link): static
     {
         $this->links->removeElement($link);
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Admin>
+     */
+    public function getOwners(): Collection
+    {
+        return $this->owners;
+    }
+
+    public function addOwner(Admin $owner): static
+    {
+        if (!$this->owners->contains($owner)) {
+            $this->owners->add($owner);
+        }
+
+        return $this;
+    }
+
+    public function removeOwner(Admin $owner): static
+    {
+        $this->owners->removeElement($owner);
 
         return $this;
     }

@@ -2,7 +2,7 @@
 
 namespace App\Controller\Admin;
 
-use App\Entity\{LinksFolder,Link};
+use App\Entity\LinksFolder;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\{TextField,AssociationField};
 
@@ -17,6 +17,7 @@ class LinksFolderCrudController extends AbstractCrudController
     {
         return [
             TextField::new('display_name'),
+            AssociationField::new('owners'),
             AssociationField::new('links')
         ];
     }
