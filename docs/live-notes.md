@@ -3,7 +3,7 @@
 - [x] Index page
   - [x] Create twig template `app_header` (links to login / logout / admin)
 - [x] User edition in admin
-- [ ] Entity many2one relation: bind `LinksFolder` to `Links`
+- [x] Entity many2one relation: bind `LinksFolder` to `Links`
 - [ ] API route [GET] user/{user_id}/links_folders
   - [ ] User restriction owner
   - [ ] User restriction admin

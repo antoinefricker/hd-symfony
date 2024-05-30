@@ -19,6 +19,11 @@ class Link
     #[ORM\Column(length: 255)]
     private ?string $url = null;
 
+    public function __toString()
+    {
+        return $this->display_name;   
+    }
+
     public function getId(): ?int
     {
         return $this->id;
@@ -36,7 +41,7 @@ class Link
         return $this;
     }
 
-    public function getUrl(): ?string
+    public function getUrl(): ?string 
     {
         return $this->url;
     }
