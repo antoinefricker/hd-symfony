@@ -4,16 +4,24 @@
   - [x] Create twig template `app_header` (links to login / logout / admin)
 - [x] User edition in admin
 - [x] Entity ManyToMany relation: bind `LinksFolder` to `Links`
-- [ ] Entity ManyToMany relation: bind `Admin` to `LinksFolder`
-- [ ] API route [GET] /api/user/{user_id}/links_folders
-  - [ ] User restriction owner
-  - [ ] User restriction admin
+- [x] Entity ManyToMany relation: bind `Admin` to `LinksFolder`
+- [x] API route [GET] /api/user/{user_id}/links_folders
+  - [x] User restriction owner
+  - [x] User restriction admin
 
 #### Dashboard display
 
 - [ ] Update Links entity: `pattern`, `nick`
 - [ ] Use React to view user dashboards
 https://symfony.com/bundles/ux-react/current/index.html
+
+#### Optimizations
+
+- [ ] Move serialization logic to entity classes
+- [ ] Use serializer there
+https://gist.github.com/amodpandey/4460090
+https://symfony.com/doc/current/components/serializer.html
+- [ ] Use a service to grant access to API controller
 
 #### Edit links
 

@@ -8,7 +8,7 @@ use Symfony\Component\Routing\Attribute\Route;
 
 class ApiController extends AbstractController
 {
-    #[Route('/api', name: 'app_index')]
+    #[Route('/api', name: 'api_index')]
     public function index(): JsonResponse
     {
         return $this->json([
@@ -16,4 +16,4 @@ class ApiController extends AbstractController
             'version' => '1.0.0',
         ]);
     }
-}
+} 
