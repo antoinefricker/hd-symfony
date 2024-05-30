@@ -8,10 +8,13 @@
 - [x] API route [GET] /api/user/{user_id}/links_folders
   - [x] User restriction owner
   - [x] User restriction admin
+- [x] More data
+  - [x] Update Link entity: `searchUrl`, `trigger`
+  - [x] Update LinksFolder entity: `icon`, `color`
+  - [x] Update admin forms
 
 #### Dashboard display
 
-- [ ] Update Links entity: `pattern`, `nick`
 - [ ] Use React to view user dashboards
 https://symfony.com/bundles/ux-react/current/index.html
 

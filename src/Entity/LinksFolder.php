@@ -30,6 +30,12 @@ class LinksFolder
     #[ORM\ManyToMany(targetEntity: Admin::class)]
     private Collection $owners;
 
+    #[ORM\Column(length: 7)]
+    private ?string $color = null;
+
+    #[ORM\Column(length: 64)]
+    private ?string $icon = null;
+
     public function __construct()
     {
         $this->links = new ArrayCollection();
@@ -97,6 +103,30 @@ class LinksFolder
     public function removeOwner(Admin $owner): static
     {
         $this->owners->removeElement($owner);
+
+        return $this;
+    }
+
+    public function getColor(): ?string
+    {
+        return $this->color;
+    }
+
+    public function setColor(string $color): static
+    {
+        $this->color = $color;
+
+        return $this;
+    }
+
+    public function getIcon(): ?string
+    {
+        return $this->icon;
+    }
+
+    public function setIcon(string $icon): static
+    {
+        $this->icon = $icon;
 
         return $this;
     }

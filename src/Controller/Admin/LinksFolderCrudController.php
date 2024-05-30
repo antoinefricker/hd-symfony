@@ -4,7 +4,7 @@ namespace App\Controller\Admin;
 
 use App\Entity\LinksFolder;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
-use EasyCorp\Bundle\EasyAdminBundle\Field\{TextField,AssociationField};
+use EasyCorp\Bundle\EasyAdminBundle\Field\{TextField, AssociationField, ColorField};
 
 class LinksFolderCrudController extends AbstractCrudController
 {
@@ -17,8 +17,10 @@ class LinksFolderCrudController extends AbstractCrudController
     {
         return [
             TextField::new('display_name'),
+            ColorField::new('color'),
+            TextField::new('icon')->setMaxLength(64)->setLabel('<a target="_blank" href="https://ux.symfony.com/icons?query=book&set=tabler">Icon</a>'),
             AssociationField::new('owners'),
-            AssociationField::new('links')
+            AssociationField::new('links'),
         ];
     }
 }

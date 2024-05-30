@@ -19,6 +19,12 @@ class Link
     #[ORM\Column(length: 255)]
     private ?string $url = null;
 
+    #[ORM\Column(length: 64, nullable: true)]
+    private ?string $trigger = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $search_url = null;
+
     public function __toString()
     {
         return $this->display_name;   
@@ -49,6 +55,30 @@ class Link
     public function setUrl(string $url): static
     {
         $this->url = $url;
+
+        return $this;
+    }
+
+    public function getTrigger(): ?string
+    {
+        return $this->trigger;
+    }
+
+    public function setTrigger(?string $trigger): static
+    {
+        $this->trigger = $trigger;
+
+        return $this;
+    }
+
+    public function getSearchUrl(): ?string
+    {
+        return $this->search_url;
+    }
+
+    public function setSearchUrl(?string $search_url): static
+    {
+        $this->search_url = $search_url;
 
         return $this;
     }

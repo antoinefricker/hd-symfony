@@ -43,23 +43,21 @@ class ApiUserDataController extends AbstractController
             $serializedFolder = [
                 'id' => $folder->getId(),
                 'display_name' => $folder->getDisplayName(),
+                'color' => $folder->getColor(),
+                'icon' => $folder->getIcon(),
                 'links' => [],
             ];
             foreach($folder->getLinks() as $link){
                 $serializedFolder['links'][] = [
                     'id' => $link->getId(),
+                    'display_name' => $link->getDisplayName(),
+                    'trigger' => $link->getSearchUrl(),
                     'url' => $link->getUrl(),
+                    'searchUrl' => $link->getSearchUrl(),
                 ];
             }
             $serializedFolders[] = $serializedFolder;
         }
-
-        /*
-        die(`
-            <h1>on aime la 8.6 !</h1>
-            <img src="https://media.carrefour.fr/medias/9a0b53c14f5d3bb5a79939df4ba885d5/p_1500x1500/08714800038669-c1n1-s05.jpg" />
-        `);
-        */
 
         $data = [
             'authUser' => [
@@ -73,7 +71,7 @@ class ApiUserDataController extends AbstractController
             ], 
             'folders' => $serializedFolders
         ];
-        return $this->json($data);
+        return $this->json(ApiOutputFormatter::message('user_not_found', $data));
     }
 }
 
