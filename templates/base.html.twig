@@ -1,22 +1,27 @@
 {% set title = title|default(['ultradashboard']) %}
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}{{title|join(' | ')}}{% endblock %}</title>
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%22.8em%22 font-size=%2296%22>📓</text></svg>">
-        <link rel="stylesheet" href="https://cdn.simplecss.org/simple.css">
-        {% block stylesheets %}
-        {% endblock %}
+	<head>
+		<meta charset="UTF-8">
+		<title>
+			{% block title %}
+				{{title|join(' | ')}}
+			{% endblock %}
+		</title>
+		<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%22.8em%22 font-size=%2296%22>📓</text></svg>">
+		<link rel="stylesheet" href="https://cdn.simplecss.org/simple.css"> {% block stylesheets %}{% endblock %}
 
-        {% block javascripts %}
-            {% block importmap %}{{ importmap('app') }}{% endblock %}
-        {% endblock %}
-    </head>
-    <body>
-        {% include 'blocks/header.html.twig' with {'title': title} %}
-        <main>
-        {% block body %}{% endblock %}
-        </main>
-    </body>
+		{% block javascripts %}
+			{% block importmap %}
+				{{ importmap('app') }}
+			{% endblock %}
+		{% endblock %}
+	</head>
+	<body>
+		{% include 'blocks/header.html.twig' with {'title': title} %}
+		<main>
+			{% block body %}{% endblock %}
+		</main>
+		{% include 'blocks/footer.html.twig' %}
+	</body>
 </html>
