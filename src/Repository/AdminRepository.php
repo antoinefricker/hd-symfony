@@ -10,22 +10,21 @@ use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\PasswordUpgraderInterface;
 
 /**
- * @extends ServiceEntityRepository<Admin>
- */
-class AdminRepository extends ServiceEntityRepository implements PasswordUpgraderInterface
-{
-    public function __construct(ManagerRegistry $registry)
-    {
-        parent::__construct($registry, Admin::class);
+* @extends ServiceEntityRepository<Admin>
+*/
+
+class AdminRepository extends ServiceEntityRepository implements PasswordUpgraderInterface {
+    public function __construct( ManagerRegistry $registry ) {
+        parent::__construct( $registry, Admin::class );
     }
 
     /**
-     * Used to upgrade (rehash) the user's password automatically over time.
+    * Used to upgrade ( rehash ) the user's password automatically over time.
      */
     public function upgradePassword(PasswordAuthenticatedUserInterface $user, string $newHashedPassword): void
     {
         if (!$user instanceof Admin) {
-            throw new UnsupportedUserException(sprintf('Instances of "%s" are not supported.', $user::class));
+            throw new UnsupportedUserException(sprintf("Instances of '%s' are not supported.", $user::class));
         }
 
         $user->setPassword($newHashedPassword);
@@ -52,7 +51,7 @@ class AdminRepository extends ServiceEntityRepository implements PasswordUpgrade
     //    {
     //        return $this->createQueryBuilder('a')
     //            ->andWhere('a.exampleField = :val')
-    //            ->setParameter('val', $value)
+    //            ->setParameter('val', $value )
     //            ->getQuery()
     //            ->getOneOrNullResult()
     //        ;
