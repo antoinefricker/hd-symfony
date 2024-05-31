@@ -18,16 +18,9 @@
 - [ ] Use React to view user dashboards
 https://symfony.com/bundles/ux-react/current/index.html
 
-#### Optimizations
-
-- [ ] Move serialization logic to entity classes
-- [ ] Use serializer there
-https://gist.github.com/amodpandey/4460090
-https://symfony.com/doc/current/components/serializer.html
-- [ ] Use a service to grant access to API controller
-
 #### Edit links
 
+- [ ] Use a service to grant access to API controller
 - [ ] API route [GET] /link
   - [ ] Implement frontend interface
 - [ ] API route [POST] /link
@@ -36,6 +29,14 @@ https://symfony.com/doc/current/components/serializer.html
   - [ ] Implement frontend interface
 - [ ] API route [PATCH] /link/{id}
   - [ ] Implement frontend interface
+
+#### Optimizations
+
+- [ ] Move serialization logic to entity classes
+- [ ] Use serializer there
+https://gist.github.com/amodpandey/4460090
+https://symfony.com/doc/current/components/serializer.html
+
 
 #### Link edition in front end
  
@@ -71,3 +72,15 @@ https://symfony.com/doc/current/components/serializer.html
 - [ ] User password edition in admin
 - [ ] Access errors handling
 - [ ] Create makefile
+
+
+## CLI HOW TO
+
+- search
+`query :site` -> will use searchUrl if exist or google site search
+- link
+`:site` or `>site` -> reach site
+- transformers
+`::cmanel` -> cmanel case, `::uc` -> upper case, `::lc` -> lower case, `::cc` -> camel case, `::pc` -> pascal case
+- viewers
+`>>json {"id": 1}` -> open monaco, `>>calc` -> open calc, color palette, URL params reader
