@@ -1,0 +1,15 @@
+meta {
+  name: User data
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{BASE_URL}}api/user/1
+  body: none
+  auth: none
+}
+
+headers {
+  set-cookie: PHPSESSID=e14h3vufrvjkvi4rm8e2bldsef; path=/; secure; httponly; samesite=lax
+}
